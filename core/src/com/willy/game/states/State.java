@@ -1,4 +1,4 @@
-package com.willy.game.States;
+package com.willy.game.states;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,4 +19,5 @@ public abstract class State {
     public abstract void handleInput();
     public abstract void update(Float deltaTime);
     public abstract void render(SpriteBatch spriteBatch);
+    public abstract void dispose();
 }
