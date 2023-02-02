@@ -21,8 +21,8 @@ public class GameStateManager {
     }
 
     public void set(State state) {
-       pop();
-       push(state);
+        pop();
+        push(state);
     }
 
     public void update(Float deltaTime) {
