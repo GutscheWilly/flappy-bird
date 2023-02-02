@@ -12,7 +12,7 @@ import com.willy.game.states.MenuState;
 public class FlappyBird extends ApplicationAdapter {
 
 	public static final int WIDTH = 480;
-	public static final int HEIGTH = 720;
+	public static final int HEIGTH = 700;
 	public static final String TITLE = "Flappy Bird";
 
 	private GameStateManager gameStateManager;
