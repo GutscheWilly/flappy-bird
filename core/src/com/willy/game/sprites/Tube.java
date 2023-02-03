@@ -7,9 +7,11 @@ import java.util.Random;
 
 public class Tube {
 
+    public static final int TUBE_WIDTH = 52;
     private static final int FLUCTUATION = 130;
     private static final int TUBE_GAP = 100;
     private static final int LOWEST_OPENING = 120;
+
     private Texture topTexture, bottomTexture;
     private Vector2 topPosition, bottomPosition;
     private Random rand;
@@ -36,5 +38,10 @@ public class Tube {
 
     public Vector2 getBottomPosition() {
         return bottomPosition;
+    }
+
+    public void reposition(float x) {
+        topPosition.set(x, rand.nextInt(FLUCTUATION) + TUBE_GAP + LOWEST_OPENING);
+        bottomPosition.set(x, topPosition.y - TUBE_GAP - bottomTexture.getHeight());
     }
 }
