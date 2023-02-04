@@ -2,6 +2,8 @@ package com.willy.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.loaders.MusicLoader;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,15 +19,18 @@ public class FlappyBird extends ApplicationAdapter {
 
 	private GameStateManager gameStateManager;
 	private SpriteBatch batch;
-	Texture img;
+	private Music music;
 	
 	@Override
 	public void create () {
 		gameStateManager = new GameStateManager();
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-		ScreenUtils.clear(1, 0, 0, 1);
 		gameStateManager.push(new MenuState(gameStateManager));
+		batch = new SpriteBatch();
+		music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
+		music.setLooping(true);
+		music.setVolume(0.05f);
+		music.play();
+		ScreenUtils.clear(1, 0, 0, 1);
 	}
 
 	@Override
@@ -37,7 +42,8 @@ public class FlappyBird extends ApplicationAdapter {
 	
 	@Override
 	public void dispose () {
+		super.dispose();
 		batch.dispose();
-		img.dispose();
+		music.dispose();
 	}
 }
