@@ -15,7 +15,7 @@ public class PlayState extends State {
 
     private static final int TUBE_SPACING = 125;
     private static final int TUBE_COUNT = 4;
-    private static final int GROUND_Y_OFFSET = -50;
+    private static final int GROUND_Y_OFFSET = -60;
 
     private Bird bird;
     private Texture background;
