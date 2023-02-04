@@ -54,4 +54,9 @@ public class Tube {
     public boolean collides(Rectangle player) {
         return player.overlaps(boundsTopRectangle) || player.overlaps(boundsBotRectangle);
     }
+
+    public void dispose() {
+        topTexture.dispose();
+        bottomTexture.dispose();
+    }
 }
