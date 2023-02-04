@@ -1,6 +1,7 @@
 package com.willy.game.sprites;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
 public class Bird {
@@ -12,11 +13,13 @@ public class Bird {
     private Vector3 velocity;
 
     private Texture texture;
+    private Rectangle bounds;
 
     public Bird(int sourceX, int sourceY) {
         position = new Vector3(sourceX, sourceY, 0);
         velocity = new Vector3(0, 0, 0);
         texture = new Texture("bird.png");
+        bounds = new Rectangle(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 
     public Vector3 getPosition() {
@@ -25,6 +28,10 @@ public class Bird {
 
     public Texture getTexture() {
         return texture;
+    }
+
+    public Rectangle getBounds() {
+        return bounds;
     }
 
     public void update(float deltaTime) {
@@ -37,6 +44,7 @@ public class Bird {
             position.y = 0;
         }
         velocity.scl(1 / deltaTime);
+        bounds.setPosition(position.x, position.y);
     }
 
     public void jump() {

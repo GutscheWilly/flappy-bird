@@ -53,6 +53,9 @@ public class PlayState extends State {
             if (camera.position.x - (camera.viewportWidth / 2) > tube.getTopPosition().x + tube.getTopTexture().getWidth()) {
                 tube.reposition(tube.getTopPosition().x + (TUBE_SPACING + Tube.TUBE_WIDTH) * TUBE_COUNT);
             }
+            if (tube.collides(bird.getBounds())) {
+                gameStateManager.set(new PlayState(gameStateManager));
+            }
         }
         camera.update();
     }
