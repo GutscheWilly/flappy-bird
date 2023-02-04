@@ -9,6 +9,7 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setWindowedMode(FlappyBird.WIDTH, FlappyBird.HEIGTH);
 		config.setTitle(FlappyBird.TITLE);
+		config.setWindowIcon("bird.png");
 		new Lwjgl3Application(new FlappyBird(), config);
 	}
 }
