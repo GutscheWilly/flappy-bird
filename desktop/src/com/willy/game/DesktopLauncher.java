@@ -10,6 +10,7 @@ public class DesktopLauncher {
 		config.setWindowedMode(FlappyBird.WIDTH, FlappyBird.HEIGTH);
 		config.setTitle(FlappyBird.TITLE);
 		config.setWindowIcon("bird.png");
+		config.setForegroundFPS(60);
 		new Lwjgl3Application(new FlappyBird(), config);
 	}
 }
